@@ -1,0 +1,23 @@
+{
+   "name": "memcached-with-node",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "micro",
+      "dev": "micro-dev"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "@types/node": "^22.10.5",
+      "micro-dev": "^3.1.0",
+      "typescript": "^5.7.3"
+   },
+   "dependencies": {
+      "memcached": "^2.2.2",
+      "micro": "^10.0.1",
+      "winston": "^3.17.0"
+   }
+}
