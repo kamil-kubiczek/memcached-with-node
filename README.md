@@ -2,6 +2,8 @@
 
 Projects is example of small Node.js service which acts as API with custom in-memory database and memcached cache. **Feel free to use it as reference or fork it!**
 
+Postman collection: [Endpoints collection](https://www.postman.com/restaurant-backend-developers-team/memcached-with-node)
+
 ## Installation
 
 Use the npm package manager to install dependencies
@@ -24,7 +26,7 @@ npm run start
 
 ## How it works
 
-Every time client requests Express API cached endpoint, API searches for cached query in memcached. If it's available it's returned, if not, it's downloaded from artificially slowed in-memory database and cached again in background.
+Every time client requests Express API cached endpoint, API searches for cached query in memcached. If it's available it's returned, if not, it's downloaded from artificially slowed in-memory database and cached again in background. If you run API you will see if some data was cached or not (CACHE HIT/MISS)
 
 Here's flowchart of process:
 
