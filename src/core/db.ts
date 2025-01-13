@@ -4,49 +4,67 @@ export class Database {
    private users: UserEntity[]
    private posts: PostEntity[]
    private comments: CommentEntity[]
+   public initialized = false
+
    constructor(users: UserEntity[], posts: PostEntity[], comments: CommentEntity[]) {
       this.users = users
       this.posts = posts
       this.comments = comments
    }
 
-   getUsers() {
-      return this.getUsers
+   async getUsers() {
+      await sleep(1300)
+      return this.users
    }
 
-   getPosts() {
+   async getPosts() {
+      await sleep(1000)
       return this.posts
    }
 
-   getComments() {
+   async getComments() {
+      await sleep(800)
       return this.comments
    }
 
-   getCommentsByPostId(postId: number) {
+   async getCommentsByPostId(postId: number) {
+      await sleep(2230)
       return this.comments.filter((comment) => comment.postId === postId)
    }
 
-   getPostsByUserId(userId: number) {
+   async getPostsByUserId(userId: number) {
+      await sleep(2400)
       return this.posts.filter((post) => post.userId === userId)
    }
 
-   getUserById(userId: number) {
+   async getUserById(userId: number) {
+      await sleep(500)
       return this.users.find((user) => user.id === userId)
    }
 
-   getPostById(postId: number) {
+   async getPostById(postId: number) {
+      await sleep(1400)
       return this.posts.find((post) => post.id === postId)
    }
 
-   getCommentById(commentId: number) {
+   async getCommentById(commentId: number) {
+      await sleep(1353)
       return this.comments.find((comment) => comment.id === commentId)
    }
 
-   getCommentsByUserId(userId: number) {
+   async getCommentsByUserId(userId: number) {
+      await sleep(1530)
       return this.comments.filter((comment) => comment.user.id === userId)
    }
 
-   getCommentsByPostIdAndUserId(postId: number, userId: number) {
+   async getCommentsByPostIdAndUserId(postId: number, userId: number) {
+      await sleep(3200)
       return this.comments.filter((comment) => comment.postId === postId && comment.user.id === userId)
    }
+}
+
+function sleep(ms: number) {
+   return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+   })
 }
